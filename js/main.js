@@ -80,7 +80,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     links.forEach(link => {
         link.addEventListener("click", (e) => {
+
+            /* DESATIVA ANIMAÇÕES NO CELULAR */
+            if (window.innerWidth < 768) {
+                return window.location.href = link.getAttribute("href");
+            }
+
             e.preventDefault();
+
             const href = link.getAttribute("href");
 
             // identifica direção do clique
