@@ -2753,3 +2753,80 @@ body::after {
         background: url('../assets/img/m4.png') center/cover no-repeat fixed;
     }
 }
+
+
+/* ========================== */
+
+
+/*  OTIMIZAÇÃO PESADA MOBILE  */
+
+
+/* ========================== */
+
+@media (max-width: 768px) {
+    /* Reduz blur pesado */
+    .service-block,
+    .about-block,
+    .info-block,
+    .tools-section,
+    .solutions,
+    .builder-card {
+        backdrop-filter: blur(2px) !important;
+        -webkit-backdrop-filter: blur(2px) !important;
+    }
+    /* Remove drop-shadows pesados */
+    img,
+    .service-image img,
+    .core-sphere img,
+    .tech-icon img {
+        filter: none !important;
+    }
+    /* Remove flutuação para melhorar FPS */
+    .service-image img,
+    .whatsapp-img {
+        animation: none !important;
+    }
+    /* Órbitas mais leves */
+    .orbit {
+        animation-duration: 120s !important;
+        opacity: 0.6;
+    }
+    /* Núcleo menos brilhante */
+    .core-sphere {
+        box-shadow: 0 0 30px rgba(0, 191, 255, 0.3) !important;
+        animation: none !important;
+    }
+    /* Ícones menores = menos processamento */
+    .tech-icon img {
+        width: 40px !important;
+    }
+    /* Tamanhos dos círculos orbitais reduzidos */
+    .orbit-1 {
+        width: 180px !important;
+        height: 180px !important;
+    }
+    .orbit-2 {
+        width: 280px !important;
+        height: 280px !important;
+    }
+    .orbit-3 {
+        width: 360px !important;
+        height: 360px !important;
+    }
+    /* Remove brilho pesado das seções */
+    .service-block,
+    .maintenance-purple,
+    .tools-section {
+        box-shadow: none !important;
+        border: 1px solid rgba(255, 255, 255, 0.03) !important;
+    }
+    /* Remove transform no hover (economiza GPU) */
+    *:hover {
+        transform: none !important;
+    }
+    /* Suaviza scroll */
+    html,
+    body {
+        scroll-behavior: smooth;
+    }
+}
